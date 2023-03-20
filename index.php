@@ -64,7 +64,7 @@
                             <li>
                                 <?php
 
-                                    echo $key;
+                                    echo $hotel_data["name"];
                                     ?>
                                 <ul>
                                     <li>
@@ -80,36 +80,67 @@
                     
                 }
             }
+
         ?>
     </div>
 
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+                <th scope="col">#</th>
+                <?php
+                    foreach($hotels as $hotel){
+                        ?>
+                            <th>
+                                <?php
+                                   echo $hotel;
+                                ?>
+                            </th>
+                        <?php
+                    }
+                ?>
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            </tr>
+                <?php
+                    foreach($hotels as $hotel){
+                        foreach($hotel as $key => $value)
+                        ?>
+                            <tr>
+                                <th>
+                                    <?php
+                                        echo $hotel["name"];
+                                    ?>
+
+                                </th>
+                                <th>
+                                    <?php
+                                        echo $hotel["description"];
+                                    ?>
+
+                                </th>
+                                <th>
+                                    <?php
+                                        echo $hotel["parking"];
+                                    ?>
+
+                                </th>
+                                <th>
+                                    <?php
+                                        echo $hotel["vote"];
+                                    ?>
+
+                                </th>
+                                <th>
+                                    <?php
+                                        echo $hotel["distance_to_center"];
+                                    ?>
+
+                                </th>
+                            </tr>
+                        <?php
+                    }
+                ?>
         </tbody>
     </table>
 
