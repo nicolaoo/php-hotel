@@ -40,12 +40,7 @@
 
     ];
 
-    foreach($hotels as $hotel_data){
-        foreach($hotel_data as $key => $value){
-            echo $key;
-            echo $value;
-        }
-    }
+    
 
 ?>
 
@@ -59,6 +54,32 @@
 </head>
 <body>
     <div>
+        <?php
+            foreach($hotels as $hotel_data){
+                foreach($hotel_data as $key => $value){
+                    ?>
+                        <ul>
+
+                            <li>
+                                <?php
+
+                                    echo $key;
+                                    ?>
+                                <ul>
+                                    <li>
+                                        <?php
+                                            echo $value;
+                                            ?>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <?php
+                    
+                }
+            }
+        ?>
     </div>
 
 </body>
