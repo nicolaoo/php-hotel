@@ -54,7 +54,7 @@
     <title>Hotels</title>
 </head>
 <body>
-    <div>
+    <!-- <div>
         <?php
             foreach($hotels as $hotel_data){
                 foreach($hotel_data as $key => $value){
@@ -82,7 +82,7 @@
             }
 
         ?>
-    </div>
+    </div> -->
 
     <table class="table">
         <thead>
@@ -116,7 +116,7 @@
                                 </td>
                                 <td>
                                     <?php
-                                        echo $hotel["parking"];
+                                        echo $hotel["parking"] === true ? 'Si' : 'No';
                                     ?>
 
                                 </td>
@@ -124,12 +124,12 @@
                                     <?php
                                         echo $hotel["vote"];
                                     ?>
-
+                                    /5
                                 </td>
                                 <td>
                                     <?php
                                         echo $hotel["distance_to_center"];
-                                    ?>
+                                    ?> km
 
                                 </td>
                             </tr>
